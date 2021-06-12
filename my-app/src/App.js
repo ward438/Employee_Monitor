@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import React, { useState, component } from 'react';
 import axios from 'axios';
 import Card from './components/card';
-// import Navbar from './components/nav';
+import Filter from './components/filter';
 import {Navbar, Container} from 'react-bootstrap';
 
 
@@ -18,8 +18,20 @@ const getEmployees = () => {
     })             
 }
 
+const filteredEmployees = () => {
+  return axios.get(`https://randomuser.me/api/?nat=US`) 
+  .then(response => {
+    return response.data;
+    
+  })      
+}
+
 function App() {
   const [employees, setEmployeesState] = useState({
+    results: [],
+    info: {}
+  })
+  const [filterEmployees, setFilterEmployeesState] = useState({
     results: [],
     info: {}
   })
@@ -36,6 +48,13 @@ function App() {
         });        
       }}>Get Employees</Button>      
       {employees.results.map(employee => <Card key={employee.name} employee={employee} setEmployeesState={setEmployeesState}/>)}    
+      
+      <Button onClick={() => {
+        filteredEmployees().then(employees=>{
+          setEmployeesState(employees);
+        });        
+      }}>US Region Employee</Button>      
+
       </Container>
 
      
