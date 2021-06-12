@@ -2,7 +2,7 @@
 import './App.css';
 
 import { Button } from 'react-bootstrap';
-import React, { useState, component } from 'react';
+import React, { useState, component, useReducer, useEffect } from 'react';
 import axios from 'axios';
 import Card from './components/card';
 import Filter from './components/filter';
@@ -10,20 +10,33 @@ import {Navbar, Container} from 'react-bootstrap';
 
 
 
-const getEmployees = () => {  
-  return axios.get(`https://randomuser.me/api/?results=100`) 
-    .then(response => {
-      return response.data;
-      
-    })             
-}
 
-const filteredEmployees = () => {
-  return axios.get(`https://randomuser.me/api/?nat=US`) 
-  .then(response => {
-    return response.data;
+
+// const getEmployees = () => {  
+//   return axios.get(`https://randomuser.me/api/?results=100`) 
+//     .then(response => {
+//       return response.data;
+      
+//     })             
+// }
+
+// const filteredEmployees = () => {
+//   return axios.get(`https://randomuser.me/api/?nat=US`) 
+//   .then(response => {
+//     return response.data;
     
-  })      
+//   })      
+// }
+
+function filter() {  
+
+
+  // return
+  //   <div>
+  //     <Button onClick={() => {
+  // }}></Button>
+  //   </div>
+   
 }
 
 function App() {
@@ -31,22 +44,39 @@ function App() {
     results: [],
     info: {}
   })
-  const [filterEmployees, setFilterEmployeesState] = useState({
-    results: [],
-    info: {}
-  })
 
+  
+  const getEmployees = () => {  
+  return axios.get(`https://randomuser.me/api/?results=100`) 
+      .then(response => {
+        // return response.data;
+        setEmployeesState(response.data);          
+      })             
+  }
+
+  const filteredEmployees = () => {
+    return axios.get(`https://randomuser.me/api/?nat=US`) 
+    .then(response => {
+      return response.data;
+      
+    })      
+  }
+
+
+  useEffect(() => {
+    getEmployees();  
+  }, [])
+ 
+  // useEffect(() => {
+  //   // search box search employees
+  //   employees.results.filter()
+  // }, [])
   return (    
     <div>  
       <Container>
         <Navbar expand="lg" variant="light" bg="warning">
         <Navbar.Brand href="#">Employee Monitor</Navbar.Brand>
-        </Navbar>
-        <Button onClick={() => {
-        getEmployees().then(employees=>{
-          setEmployeesState(employees);
-        });        
-      }}>Get Employees</Button>      
+        </Navbar>         
       {employees.results.map(employee => <Card key={employee.name} employee={employee} setEmployeesState={setEmployeesState}/>)}    
       
       <Button onClick={() => {
@@ -54,7 +84,6 @@ function App() {
           setEmployeesState(employees);
         });        
       }}>US Region Employee</Button>      
-
       </Container>
 
      
