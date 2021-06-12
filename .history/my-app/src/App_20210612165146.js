@@ -49,8 +49,8 @@ function App() {
         });        
       }}>US Region Employee</Button>
       <Button onClick={() => {
-        getEmployees();
-        
+        getEmployees()
+        })
       }}>Home</Button>           
       {employees.results.map(employee => <Card key={employee.name} employee={employee} setEmployeesState={setEmployeesState}/>)}    
       

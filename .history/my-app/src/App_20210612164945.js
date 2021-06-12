@@ -42,19 +42,14 @@ function App() {
       <Container>
         <Navbar expand="lg" variant="light" bg="warning">
         <Navbar.Brand href="#">Employee Monitor</Navbar.Brand>
-        </Navbar> 
-        <Button onClick={() => {
+        </Navbar>         
+      {employees.results.map(employee => <Card key={employee.name} employee={employee} setEmployeesState={setEmployeesState}/>)}    
+      
+      <Button onClick={() => {
         filteredEmployees().then(employees=>{
           setEmployeesState(employees);
         });        
-      }}>US Region Employee</Button>
-      <Button onClick={() => {
-        getEmployees();
-        
-      }}>Home</Button>           
-      {employees.results.map(employee => <Card key={employee.name} employee={employee} setEmployeesState={setEmployeesState}/>)}    
-      
-        
+      }}>US Region Employee</Button>      
       </Container>
 
      

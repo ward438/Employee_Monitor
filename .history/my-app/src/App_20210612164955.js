@@ -47,11 +47,7 @@ function App() {
         filteredEmployees().then(employees=>{
           setEmployeesState(employees);
         });        
-      }}>US Region Employee</Button>
-      <Button onClick={() => {
-        getEmployees();
-        
-      }}>Home</Button>           
+      }}>US Region Employee</Button>            
       {employees.results.map(employee => <Card key={employee.name} employee={employee} setEmployeesState={setEmployeesState}/>)}    
       
         
