@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Employee_Monitor/static/css/main.1635e87c.chunk.css",
+    "main.js": "/Employee_Monitor/static/js/main.4da816a3.chunk.js",
+    "main.js.map": "/Employee_Monitor/static/js/main.4da816a3.chunk.js.map",
+    "runtime-main.js": "/Employee_Monitor/static/js/runtime-main.866ebf32.js",
+    "runtime-main.js.map": "/Employee_Monitor/static/js/runtime-main.866ebf32.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/Employee_Monitor/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.a407c6e5.chunk.js": "/Employee_Monitor/static/js/2.a407c6e5.chunk.js",
+    "static/js/2.a407c6e5.chunk.js.map": "/Employee_Monitor/static/js/2.a407c6e5.chunk.js.map",
+    "static/js/3.1cb41384.chunk.js": "/Employee_Monitor/static/js/3.1cb41384.chunk.js",
+    "static/js/3.1cb41384.chunk.js.map": "/Employee_Monitor/static/js/3.1cb41384.chunk.js.map",
+    "index.html": "/Employee_Monitor/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/Employee_Monitor/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.1635e87c.chunk.css.map": "/Employee_Monitor/static/css/main.1635e87c.chunk.css.map",
+    "static/js/2.a407c6e5.chunk.js.LICENSE.txt": "/Employee_Monitor/static/js/2.a407c6e5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.866ebf32.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.a407c6e5.chunk.js",
+    "static/css/main.1635e87c.chunk.css",
+    "static/js/main.4da816a3.chunk.js"
+  ]
+}
